@@ -1,0 +1,14 @@
+*.pyc
+*.pyo
+__pycache__/
+
+venv/
+env/
+.env/
+.venv/
+
+flaskapp.log
+flaskapp.db
+
+.DS Store
+Thumbs.db
