@@ -6,5 +6,9 @@ app=Flask(__name__)
 def hello_world():
     return 'Hello World!'
 
+@app.route('/ahoj')
+def ahoj():
+    return 'Ahoj'
+
 if __name__=='__main__':
     app.run(debug=True)
