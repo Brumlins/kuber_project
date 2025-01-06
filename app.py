@@ -8,7 +8,10 @@ def hello_world():
 
 @app.route('/ahoj')
 def ahoj():
-    return 'Ahoj'
+    # Získání vstupu z query parametru "jmeno"
+    jmeno = request.args.get('jmeno', 'Neznámý')
+    return f'Ahoj, {jmeno}!'
+
 
 if __name__=='__main__':
     app.run(debug=True)
