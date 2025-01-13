@@ -7,7 +7,7 @@ cffi==1.15.0
 click==8.0.4
 dnspython==2.7.0
 email_validator==2.2.0
-Flask==2.0.3
+Flask==2.2.2
 Flask-Login==0.5.0
 Flask-WTF==1.2.2
 greenlet==1.1.2
@@ -35,8 +35,5 @@ typing_extensions==4.12.2
 webencodings==0.5.1
 Werkzeug==2.0.3
 WTForms==3.2.1
-Flask==2.2.2
-Flask-WTF==1.0.1
-WTForms==3.0.1
 Flask-SQLAlchemy==3.0.3
 mysql-connector-python==8.0.33
