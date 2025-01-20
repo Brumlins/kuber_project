@@ -3,8 +3,6 @@ from flask_wtf import FlaskForm
 from wtforms import StringField
 from wtforms.validators import DataRequired
 from flask_sqlalchemy import SQLAlchemy
-from app import db
-db.create_all()
 # Inicializace aplikace a připojení k SQLite databázi
 app = Flask(__name__)
 app.secret_key = 'secret-key-for-flash-messages'
