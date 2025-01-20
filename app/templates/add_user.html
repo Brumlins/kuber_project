@@ -1,32 +1,19 @@
-<!DOCTYPE html>
-<html lang="cs">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Přidat uživatele</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
-    <div class="container">
-        <h1>Přidat nového uživatele</h1>
-        
-        <form method="POST">
-            {{ form.hidden_tag() }}
-            <div>
-                <label for="first_name">Jméno</label>
-                {{ form.first_name(class="form-control") }}
-            </div>
-            <div>
-                <label for="last_name">Příjmení</label>
-                {{ form.last_name(class="form-control") }}
-            </div>
-            <button type="submit">Přidat</button>
-        </form>
-        
-        <br>
-        <a href="{{ url_for('index') }}">
-            <button>Zpět na seznam</button>
-        </a>
-    </div>
-</body>
-</html>
+{% extends "base.html" %}
+{% from "macros/fields.html" import render_input_field, render_password_field, render_checkbox_field, render_submit %}
+{% block title %}Login{% endblock %}
+{% block content %}
+  <h3>Přidej uživatele</h3>
+  <form method="POST" id='login-form'>
+    {{ form.hidden_tag() }}
+    {{ render_input_field(form.first_name) }}
+    {{ render_input_field(form.last_name) }}
+    {{ render_submit() }}
+  </form>
+  <br>
+  <a href="{{ url_for('index') }}">
+    <button>Zpět na seznam</button>
+</a>
+{% endblock %}
+
+
+

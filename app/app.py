@@ -1,7 +1,7 @@
 from flask import Flask, request, render_template, redirect, url_for, flash
 from flask_wtf import FlaskForm
 from wtforms import StringField
-from wtforms.validators import DataRequired
+from wtforms.validators import DataRequired, Regexp
 from flask_sqlalchemy import SQLAlchemy
 # Inicializace aplikace a připojení k SQLite databázi
 app = Flask(__name__)
@@ -25,8 +25,10 @@ class User(db.Model):
 
 # WTForm pro přidání uživatele
 class UserForm(FlaskForm):
-    first_name = StringField('Jméno', validators=[DataRequired(message='Jméno je povinné!')])
-    last_name = StringField('Příjmení', validators=[DataRequired(message='Příjmení je povinné!')])
+    first_name = StringField('Jméno', validators=[DataRequired(message='Jméno je povinné!'),
+                                                  Regexp(r'^[A-Za-záéíóúůřšťžýáčďéěíňřšťůýžáóéíúů]+$', message='Nelze zadat čísla.')])
+    last_name = StringField('Příjmení', validators=[DataRequired(message='Příjmení je povinné!'),
+                                                    Regexp(r'^[A-Za-záéíóúůřšťžýáčďéěíňřšťůýžáóéíúů]+$', message='Nelze zadat čísla.')])
 
 @app.route('/')
 def index():
